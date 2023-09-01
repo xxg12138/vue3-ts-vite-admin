@@ -65,7 +65,42 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 1023px) {
+  .data {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    .bg {
+      margin-bottom: 20px;
+    }
+  }
+  .user {
+    height: 200px !important;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1024px) {
+  .data {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    .bg {
+      width: 50%;
+      margin-bottom: 20px;
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 0.2em; /* 设置滚动条宽度 */
+  background-color: transparent; /* 设置滚动条背景颜色 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent; /* 设置滚动条拖动区域颜色 */
+}
 .Contaienr {
+  overflow-y: auto;
   .user {
     display: flex;
     height: 114px;

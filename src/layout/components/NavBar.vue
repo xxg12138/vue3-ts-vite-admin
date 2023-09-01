@@ -91,7 +91,7 @@ const exitFn = () => {
 
 <style lang="scss" scoped>
 .info {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 .el-menu {
   border-right: none;

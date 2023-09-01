@@ -7,4 +7,5 @@
     "types": ["node", "jsdom"],
     "allowJs":true
   }
+
 }

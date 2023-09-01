@@ -71,6 +71,24 @@ const changeFn = () => {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 1028px) {
+  .header {
+    justify-content: space-around !important;
+  }
+  .search {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .light {
+    display: none;
+  }
+  .search {
+    // display: none;
+  }
+}
+@media (min-width: 1201px) {
+}
 .header {
   display: flex;
   justify-content: space-between;

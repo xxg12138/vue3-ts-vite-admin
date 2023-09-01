@@ -5,7 +5,7 @@
     </div>
     <div class="right">
       <AppHeader></AppHeader>
-      <AppMain></AppMain>
+      <AppMain class="main"></AppMain>
     </div>
   </div>
 </template>
@@ -33,6 +33,10 @@ const store = useCommon()
     flex: 1;
     margin: 0 4px;
     z-index: 999;
+    height: 100%;
+    .main {
+      height: 100%;
+    }
   }
 }
 </style>
