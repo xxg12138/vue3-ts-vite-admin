@@ -58,10 +58,9 @@ onMounted(async () => {
   const { data } = await getData({
     token: user_store.user?.token
   })
-  console.log('data:', data)
+  console.log(data)
 
   list.value = data.list
-  console.log(list.value)
 })
 </script>
 

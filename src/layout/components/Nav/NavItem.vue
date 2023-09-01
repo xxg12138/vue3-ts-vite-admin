@@ -3,16 +3,16 @@
     <RouterLink :to="'/' + link">
       <el-menu-item>
         <el-icon :size="20">
-          <CpIcon :name="meta.name"></CpIcon>
+          <CpIcon :name="meta?.name"></CpIcon>
         </el-icon>
-        <template #title> {{ meta.title }}</template>
+        <template #title> {{ meta?.title }}</template>
       </el-menu-item>
     </RouterLink>
 
     <div
       v-if="name === active"
       class="active"
-      :class="{ lessen: store.flag, big_active: meta.info }"
+      :class="{ lessen: store.flag, big_active: meta?.info }"
     ></div>
   </div>
 </template>
@@ -21,11 +21,7 @@
 import { useCommon } from '@/stores/index'
 const store = useCommon()
 defineProps<{
-  meta: {
-    title: string
-    name: string
-    info?: boolean
-  }
+  meta: { title: string; name: string; info?: boolean } | undefined
   active: string | unknown
   name: String | unknown
   link?: string

@@ -13,7 +13,7 @@
       <NavItem
         v-for="(item, index) in list.slice(0, 2)"
         :key="index"
-        :meta="item.meta"
+        :meta="item.meta as metas"
         :link="item.path"
         :active="active"
         :name="item.meta?.name"
@@ -27,7 +27,7 @@
       <NavItem
         v-for="(item, index) in list.slice(2, -1)"
         :key="index"
-        :meta="item.meta"
+        :meta="item.meta as metas"
         :link="item.path"
         :active="active"
         :name="item.meta?.name"
@@ -36,7 +36,7 @@
 
       <div class="info">
         <NavItem
-          :meta="list.slice(-1)[0].meta"
+          :meta="list.slice(-1)[0].meta as metas"
           :link="list.slice(-1)[0].path"
           :active="active"
           :name="list.slice(-1)[0].meta?.name"
@@ -55,6 +55,7 @@
 </template>
 
 <script setup lang="ts">
+import type { metas } from '@/types/UserExplore'
 import { ElMessageBox } from 'element-plus'
 import NavItem from './Nav/NavItem.vue'
 import { ref } from 'vue'
