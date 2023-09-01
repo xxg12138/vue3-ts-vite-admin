@@ -24,7 +24,8 @@ import form_Data from '@/components/login/form.vue'
 
 <style lang="scss" scoped>
 .container {
-  background-color: #4b8aff;
+  // background-color: #4b8aff;
+  background-color: #242636;
   .login {
     position: absolute;
     left: 50%;
@@ -47,6 +48,7 @@ import form_Data from '@/components/login/form.vue'
       background-color: #fff;
       .form {
         padding: 40px;
+        background-color: #b87fd9;
         .change {
           padding: 10px 0 20px;
           font-size: 12px;
@@ -69,7 +71,8 @@ import form_Data from '@/components/login/form.vue'
     top: -300px;
     width: 900px;
     height: 900px;
-    background-color: #fff;
+    // background-color: #fff;
+    background-color: #b87fd9;
     opacity: 0.2;
     border-radius: 50%;
   }

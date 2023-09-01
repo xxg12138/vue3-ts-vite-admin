@@ -100,6 +100,7 @@ const login = (formEl: FormInstance | undefined) => {
       color: #fff;
       font-size: 15px;
       background: rgba(73, 102, 223, 1);
+      border: 0px;
     }
   }
 }
