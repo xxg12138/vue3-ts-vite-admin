@@ -49,7 +49,7 @@
           </el-icon>
         </div>
         <div>
-          <img src="@/assets/icon/Group 5401.png" alt="" />
+          <img src="@/assets/icon/Group.png" alt="" />
         </div>
       </div>
     </div>
