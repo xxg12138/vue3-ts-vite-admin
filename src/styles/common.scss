@@ -1,0 +1,47 @@
+$--font-path: '~@/assets/svg';  // 自定义字体文件所在的路径    
+$--svg-icon-font-css-prefix: 'icon-';
+$bg: #b87fd9;
+
+// main-container global css
+.app-container {
+    padding: 20px;
+}
+
+// 按钮开关颜色
+.el-switch__action{
+  background: linear-gradient(
+        180deg,
+        rgba(184, 127, 217, 1) 0%,
+        rgba(92, 69, 151, 1) 100%
+      );
+}
+
+.btnFalses {
+    widows: 70px;
+    height: 40px;
+    color: orange;
+    background-color: $bg !important;
+  }
+
+  .box{
+    background-color: #1a1b23 !important;
+    border: 0px !important;
+  }
+
+  .active{
+    background-color: $bg;
+  }
+
+ 
+  .white_bg{
+    background-color: #feb743 !important;
+  }
+
+  
+  .black_bg{
+    background-color: #242636;
+  }
+
+  
+
+  
