@@ -5,7 +5,6 @@ import 'nprogress/nprogress.css'
 
 const whilteList = ['/login']
 router.beforeEach((to, from, next) => {
-  console.log(useUserStore().user?.token)
   NProgress.start()
   if (useUserStore().user?.token) {
     if (whilteList.includes(to.path)) {

@@ -1,6 +1,18 @@
+
 $--font-path: '~@/assets/svg';  // 自定义字体文件所在的路径    
 $--svg-icon-font-css-prefix: 'icon-';
 $bg: #b87fd9;
+$white_bg:#fff;
+
+:root{
+  // 组件颜色
+  // --open-bg:#eae7da;
+  --open-bg:#EAE7FE;
+  --search:'#ffd745'
+  --el-fill-color-blank:#EAE7FE  !important;
+
+}
+
 
 // main-container global css
 .app-container {
@@ -31,17 +43,42 @@ $bg: #b87fd9;
   .active{
     background-color: $bg;
   }
-
- 
-  .white_bg{
-    background-color: #feb743 !important;
-  }
-
-  
   .black_bg{
     background-color: #242636;
   }
 
   
+//  开灯
+  .white_bg{
+    // background-color: #feb743 !important;
+    background-color: $white_bg !important;
 
+  }
+.white_font{
+  color: #000 !important;
+}
+.black_font{
+  color: #fff !important;
+
+}
   
+.element{
+  background-color: var(--open-bg) !important;
+}
+.element_font{
+color: var(--open-bg) !important;
+}
+
+.border{
+  border-color: #000 !important;
+}
+
+ .open{
+  .el-switch__action{
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgb(177, 171, 218) 100%
+    );
+  }
+ }

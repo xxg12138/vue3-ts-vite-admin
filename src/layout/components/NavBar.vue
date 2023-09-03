@@ -47,7 +47,9 @@
           <el-icon :size="20">
             <CpIcon :name="'exit'"></CpIcon>
           </el-icon>
-          <template #title>退出账号</template>
+          <template #title>
+            <div :class="{ white_font: store.light_flag }">退出账号</div>
+          </template>
         </el-menu-item>
       </div>
     </el-menu>
@@ -68,7 +70,6 @@ const Route = useRoute()
 const list = Route.matched[0].children
 
 const active = ref(list[0].meta?.name)
-console.log(list)
 
 const User_store = useUserStore()
 const router = useRouter()

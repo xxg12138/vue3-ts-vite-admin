@@ -1,18 +1,29 @@
 <template>
   <div class="Contaienr">
     <div class="user">
-      <div class="user-left">
+      <div
+        class="user-left"
+        :class="store.light_flag ? 'white_font' : 'black_font'"
+      >
         <h1>早上好,{{ user_store.user?.name }}</h1>
         <div class="info">
           <img
             src="https://img.js.design/assets/img/6284bbb5cfbf108657fa51cb.png"
             alt=""
           />
-          <div class="intro">完成你的个人资料</div>
-          <div class="edit">立即编辑</div>
+          <div>
+            <div class="intro">完成你的个人资料</div>
+            <div class="edit">立即编辑</div>
+          </div>
         </div>
       </div>
-      <div class="user-right">
+      <div
+        class="user-right"
+        :class="[
+          store.light_flag ? 'white_font' : 'black_font',
+          store.light_flag ? 'element' : ''
+        ]"
+      >
         <div class="my-production">
           <div>您的作品</div>
           <div class="count">12</div>
@@ -24,7 +35,7 @@
           </div>
         </div>
         <div class="line"></div>
-        <div class="pay">
+        <div class="pay" :class="store.light_flag ? 'border' : ''">
           <el-icon size="20" color="#5ae6bc"><CirclePlus /></el-icon>
           <div>充值余额 &gt;</div>
         </div>
@@ -32,7 +43,7 @@
     </div>
 
     <div class="stack">
-      <div>技术栈</div>
+      <div :class="store.light_flag ? 'white_font' : 'black_font'">技术栈</div>
       <div class="all">
         全部项目
         <div>+30</div>
@@ -40,7 +51,12 @@
     </div>
 
     <div class="data">
-      <div class="bg" v-for="(item, index) in list" :key="index">
+      <div
+        :class="store.light_flag ? 'element' : ''"
+        class="bg"
+        v-for="(item, index) in list"
+        :key="index"
+      >
         <box :item="item"></box>
       </div>
     </div>
@@ -52,13 +68,14 @@ import type { type_list } from '@/types/UserExplore'
 import { useUserStore } from '@/stores/index'
 import { onMounted, ref } from 'vue'
 import { getData } from '@/api/UserExplore'
+import { useCommon } from '@/stores/index'
+const store = useCommon()
 const user_store = useUserStore()
 const list = ref<type_list[]>()
 onMounted(async () => {
   const { data } = await getData({
     token: user_store.user?.token
   })
-  console.log(data)
 
   list.value = data.list
 })
@@ -77,6 +94,13 @@ onMounted(async () => {
   .user {
     height: 200px !important;
     flex-direction: column;
+  }
+  .info {
+    padding: 15px;
+    div {
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }
 @media (min-width: 1024px) {
@@ -112,7 +136,6 @@ onMounted(async () => {
       h1 {
         font-size: 32px;
         font-weight: 700;
-        color: rgba(255, 255, 255, 1);
       }
       .info {
         display: flex;
@@ -124,10 +147,12 @@ onMounted(async () => {
           border: 1px solid #b47dd4;
           border-radius: 50%;
         }
+        div {
+          display: flex;
+        }
         .intro {
           line-height: 19.21px;
           margin: 0 15px;
-          color: rgba(255, 255, 255, 1);
         }
         .edit {
           font-size: 16px;
@@ -156,20 +181,20 @@ onMounted(async () => {
         justify-content: space-between;
         align-items: center;
         font-size: 16px;
-        color: rgba(221, 221, 221, 1);
+        // color: rgba(221, 221, 221, 1);
         cursor: context-menu;
         .count {
           font-size: 32px;
           font-weight: 600;
           letter-spacing: 0px;
           line-height: 38.73px;
-          color: rgba(255, 255, 255, 1);
+          // color: rgba(255, 255, 255, 1);
         }
         .ETH {
           display: flex;
           align-items: center;
           .cp-icon {
-            color: #b87fd9;
+            color: #b87fd9 !important;
           }
         }
       }
@@ -189,7 +214,7 @@ onMounted(async () => {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        color: #fff;
+        // color: #fff;
         cursor: context-menu;
       }
     }

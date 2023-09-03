@@ -1,5 +1,8 @@
 <template>
-  <div class="container">
+  <div
+    class="container"
+    :style="{ background: store.light_flag ? '#f4f4f4' : '#1e1e2c' }"
+  >
     <div class="left" :class="store.light_flag ? 'white_bg' : 'black_bg'">
       <NavBar></NavBar>
     </div>
@@ -21,7 +24,7 @@ const store = useCommon()
 <style lang="scss" scoped>
 .container {
   display: flex;
-  background-color: #1e1e2c;
+  // background-color: #1e1e2c;
   .left {
     height: 100%;
     background-color: #343646;

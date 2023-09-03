@@ -2,17 +2,26 @@
   <div class="nav">
     <RouterLink :to="'/' + link">
       <el-menu-item>
-        <el-icon :size="20">
+        <el-icon :size="20" :color="'#000'">
           <CpIcon :name="meta?.name"></CpIcon>
         </el-icon>
-        <template #title> {{ meta?.title }}</template>
+        <template #title>
+          <div :class="{ white_font: store.light_flag }">
+            {{ meta?.title }}
+          </div></template
+        >
       </el-menu-item>
     </RouterLink>
 
     <div
       v-if="name === active"
       class="active"
-      :class="{ lessen: store.flag, big_active: meta?.info }"
+      :class="{
+        lessen: store.flag,
+        big_active: meta?.info,
+        element: store.light_flag,
+        active: !store.light_flag
+      }"
     ></div>
   </div>
 </template>
@@ -32,6 +41,8 @@ defineProps<{
 .nav {
   position: relative;
   animation: all 0.3s;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 500;
   img {
     width: 25px;
     height: 25px;

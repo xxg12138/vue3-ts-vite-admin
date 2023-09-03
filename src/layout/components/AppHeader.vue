@@ -1,11 +1,20 @@
 <template>
   <div class="header" :class="store.light_flag ? 'white_bg' : 'black_bg'">
-    <el-icon v-if="!store.flag" size="35" color="#fff" @click="store.ChangeFlag"
+    <el-icon
+      v-if="!store.flag"
+      size="35"
+      :class="store.light_flag ? 'element_font' : 'white_font'"
+      @click="store.ChangeFlag"
       ><Fold
     /></el-icon>
-    <el-icon v-if="store.flag" size="35" color="#fff" @click="store.ChangeFlag"
+    <el-icon
+      v-if="store.flag"
+      size="35"
+      :class="store.light_flag ? 'element_font' : 'white_font'"
+      @click="store.ChangeFlag"
       ><Expand
     /></el-icon>
+    <!-- 搜索 -->
     <div class="search">
       <el-input
         placeholder="搜索关键词"
@@ -19,8 +28,10 @@
         </template>
       </el-input>
     </div>
+
     <div class="light">
       <el-switch
+        :class="store.light_flag ? 'open' : ''"
         v-model="change"
         inline-prompt
         active-text="关灯"
@@ -29,7 +40,14 @@
         @change="changeFn"
       />
     </div>
-    <div class="info">
+    <!-- 个人信息 -->
+    <div
+      class="info"
+      :class="[
+        store.light_flag ? 'element' : 'black_bg',
+        store.light_flag ? 'white_font' : 'black_font'
+      ]"
+    >
       <div class="left">
         <div class="avatar">
           <img
@@ -58,8 +76,9 @@
 
 <script setup lang="ts">
 import { useCommon } from '@/stores/index'
-import { ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { useUserStore } from '@/stores/index'
+
 const user_sotre = useUserStore()
 
 const store = useCommon()
@@ -68,12 +87,30 @@ const change = ref<boolean>(false)
 const changeFn = () => {
   store.Changelight_flag()
 }
+let color = ref<String>()
+onMounted(() => {
+  color = ref<string>(
+    getComputedStyle(document.body).getPropertyValue('--open-bg').trim()
+  )
+})
+watch(
+  () => store.light_flag,
+  () => {
+    document.documentElement.style.setProperty(
+      '--el-fill-color-blank',
+      store.light_flag ? (color.value as string) : ' #343646'
+    )
+  },
+  {
+    immediate: true
+  }
+)
 </script>
 
 <style lang="scss" scoped>
 @media (max-width: 1028px) {
   .header {
-    justify-content: space-around !important;
+    justify-content: space-between !important;
   }
   .search {
     display: none;
@@ -134,21 +171,19 @@ const changeFn = () => {
       :first-child {
         font-weight: 700;
         line-height: 24.7px;
-        color: rgba(255, 255, 255, 1);
       }
       :nth-child(2) {
         font-size: 12px;
-        color: rgba(221, 221, 221, 1);
       }
     }
   }
+
   .search {
     margin-left: 107px;
     :deep(.el-input__wrapper) {
       width: 360px;
       height: 40px;
       border-radius: 12px;
-      background: rgba(52, 54, 70, 1);
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -168,7 +203,7 @@ const changeFn = () => {
   .light {
     :deep(.el-switch__core) {
       width: 168px;
-      height: 44px;
+      height: 40px;
       border-radius: 100px;
       background: rgba(52, 54, 70, 1);
       padding: 5px 5px 5px 5px;
@@ -181,14 +216,7 @@ const changeFn = () => {
         height: 34px;
         opacity: 1;
         border-radius: 100px;
-        // background: linear-gradient(
-        //   180deg,
-        //   rgba(184, 127, 217, 1) 0%,
-        //   rgba(92, 69, 151, 1) 100%
-        // );
-
         border: 1px solid undefined;
-
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
@@ -196,7 +224,7 @@ const changeFn = () => {
       }
     }
     :deep(.el-switch.is-checked .el-switch__core .el-switch__action) {
-      left: calc(90px) !important;
+      left: calc(94px) !important;
       color: var(--el-switch-on-color);
     }
   }
