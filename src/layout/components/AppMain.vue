@@ -18,7 +18,8 @@ const store = useCommon()
   margin-top: 4px;
   height: 100%;
   background: rgba(36, 38, 54, 1);
-  padding: 21px 62px;
+  // padding: 21px 62px;
   border-radius: 5px;
+  overflow: hidden;
 }
 </style>

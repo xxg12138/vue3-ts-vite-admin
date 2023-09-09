@@ -1,16 +1,10 @@
 <template>
   <div class="Contaienr">
     <div class="user">
-      <div
-        class="user-left"
-        :class="store.light_flag ? 'white_font' : 'black_font'"
-      >
+      <div class="user-left" :class="store.light_flag ? 'white_font' : 'black_font'">
         <h1>早上好,{{ user_store.user?.name }}</h1>
         <div class="info">
-          <img
-            src="https://img.js.design/assets/img/6284bbb5cfbf108657fa51cb.png"
-            alt=""
-          />
+          <img src="https://img.js.design/assets/img/6284bbb5cfbf108657fa51cb.png" alt="" />
           <div>
             <div class="intro">完成你的个人资料</div>
             <div class="edit">立即编辑</div>
@@ -19,10 +13,7 @@
       </div>
       <div
         class="user-right"
-        :class="[
-          store.light_flag ? 'white_font' : 'black_font',
-          store.light_flag ? 'element' : ''
-        ]"
+        :class="[store.light_flag ? 'white_font' : 'black_font', store.light_flag ? 'element' : '']"
       >
         <div class="my-production">
           <div>您的作品</div>
@@ -83,27 +74,32 @@ onMounted(async () => {
 
 <style lang="scss" scoped>
 @media (max-width: 1023px) {
-  .data {
+  .Contaienr {
+    overflow-y: auto;
     display: flex;
-    flex-direction: column !important;
-    align-items: center;
-    .bg {
-      margin-bottom: 20px;
-    }
-  }
-  .user {
-    height: 200px !important;
     flex-direction: column;
-  }
-  .info {
-    padding: 15px;
-    div {
-      align-items: center;
+    .user {
+      display: flex;
       flex-direction: column;
+      height: 180px !important;
+    }
+    .stack {
+      display: flex;
+    }
+    .data {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .bg {
+        margin-bottom: 20px;
+      }
     }
   }
 }
 @media (min-width: 1024px) {
+  .Contaienr {
+    overflow-y: auto;
+  }
   .data {
     display: flex;
     flex-wrap: wrap;
@@ -124,7 +120,8 @@ onMounted(async () => {
   background-color: transparent; /* 设置滚动条拖动区域颜色 */
 }
 .Contaienr {
-  overflow-y: auto;
+  padding: 21px 62px;
+  box-sizing: border-box;
   .user {
     display: flex;
     height: 114px;
@@ -222,10 +219,12 @@ onMounted(async () => {
   .stack {
     display: flex;
     justify-content: space-between;
-    height: 44px;
+    // height: 44px;
+    height: 65px;
+    line-height: 65px;
     font-size: 32px;
     font-weight: 700;
-    margin: 40px 0 25px;
+    padding: 0 25px;
     color: rgba(255, 255, 255, 1);
     .all {
       display: flex;

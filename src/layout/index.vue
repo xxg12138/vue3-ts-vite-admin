@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="container"
-    :style="{ background: store.light_flag ? '#f4f4f4' : '#1e1e2c' }"
-  >
+  <div class="container" :style="{ background: store.light_flag ? '#f4f4f4' : '#1e1e2c' }">
     <div class="left" :class="store.light_flag ? 'white_bg' : 'black_bg'">
       <NavBar></NavBar>
     </div>
@@ -37,6 +34,8 @@ const store = useCommon()
     margin: 0 4px;
     z-index: 999;
     height: 100%;
+    box-sizing: border-box !important;
+
     .main {
       height: 100%;
     }

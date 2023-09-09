@@ -22,5 +22,6 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach((to, from, next) => {
+  document.title = to.meta.title as string
   NProgress.done()
 })

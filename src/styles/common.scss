@@ -1,84 +1,69 @@
-
-$--font-path: '~@/assets/svg';  // 自定义字体文件所在的路径    
+$--font-path: '~@/assets/svg'; // 自定义字体文件所在的路径
 $--svg-icon-font-css-prefix: 'icon-';
 $bg: #b87fd9;
-$white_bg:#fff;
+$white_bg: #fff;
 
-:root{
+:root {
   // 组件颜色
-  // --open-bg:#eae7da;
-  --open-bg:#EAE7FE;
-  --search:'#ffd745'
-  --el-fill-color-blank:#EAE7FE  !important;
 
+  --open-bg: #eae7fe;
+  --search: '#ffd745' --el-fill-color-blank: #eae7fe !important;
 }
-
 
 // main-container global css
 .app-container {
-    padding: 20px;
+  padding: 20px;
 }
 
 // 按钮开关颜色
-.el-switch__action{
-  background: linear-gradient(
-        180deg,
-        rgba(184, 127, 217, 1) 0%,
-        rgba(92, 69, 151, 1) 100%
-      );
+.el-switch__action {
+  background: linear-gradient(180deg, rgba(184, 127, 217, 1) 0%, rgba(92, 69, 151, 1) 100%);
 }
 
 .btnFalses {
-    widows: 70px;
-    height: 40px;
-    color: orange;
-    background-color: $bg !important;
-  }
+  widows: 70px;
+  height: 40px;
+  color: orange;
+  background-color: $bg !important;
+}
 
-  .box{
-    background-color: #1a1b23 !important;
-    border: 0px !important;
-  }
+.box {
+  background-color: #1a1b23 !important;
+  border: 0px !important;
+}
 
-  .active{
-    background-color: $bg;
-  }
-  .black_bg{
-    background-color: #242636;
-  }
+.active {
+  background-color: $bg;
+}
+.black_bg {
+  background-color: #242636;
+}
 
-  
 //  开灯
-  .white_bg{
-    // background-color: #feb743 !important;
-    background-color: $white_bg !important;
-
-  }
-.white_font{
+.white_bg {
+  // background-color: #feb743 !important;
+  background-color: $white_bg !important;
+}
+.white_font {
   color: #000 !important;
 }
-.black_font{
+.black_font {
   color: #fff !important;
-
 }
-  
-.element{
+
+.element {
   background-color: var(--open-bg) !important;
 }
-.element_font{
-color: var(--open-bg) !important;
+.element_font {
+  color: var(--open-bg) !important;
 }
 
-.border{
+.border {
   border-color: #000 !important;
 }
 
- .open{
-  .el-switch__action{
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgb(177, 171, 218) 100%
-    );
+.open {
+  .el-switch__action {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(177, 171, 218) 100%);
   }
- }
+}
