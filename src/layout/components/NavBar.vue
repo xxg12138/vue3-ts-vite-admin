@@ -1,7 +1,6 @@
 <template>
   <div>
     <el-menu
-      :collapse-transition="false"
       :class="store.light_flag ? 'white_bg' : 'black_bg'"
       text-color="#fff"
       class="el-menu-vertical-demo"
