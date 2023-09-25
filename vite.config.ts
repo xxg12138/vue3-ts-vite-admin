@@ -28,7 +28,6 @@ export default defineConfig({
     })
   ],
   server: {
-    port: 595,
     host: '0.0.0.0'
   },
   resolve: {
