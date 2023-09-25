@@ -7,6 +7,7 @@
       background-color="#343646"
       :collapse="store.flag"
       router="path"
+      :collapse-transition="false"
     >
       <div class="Logo"><CpIcon :name="'Logo'"></CpIcon></div>
 

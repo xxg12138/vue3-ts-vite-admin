@@ -27,6 +27,10 @@ export default defineConfig({
       iconDirs: [path.resolve(process.cwd(), 'src/icons')]
     })
   ],
+  server: {
+    port: 595,
+    host: '0.0.0.0'
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
