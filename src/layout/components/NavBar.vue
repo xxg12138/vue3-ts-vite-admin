@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-menu
+      :collapse-transition="false"
       :class="store.light_flag ? 'white_bg' : 'black_bg'"
       text-color="#fff"
       class="el-menu-vertical-demo"
@@ -92,6 +93,11 @@ const exitFn = () => {
 </script>
 
 <style lang="scss" scoped>
+.el-menu-vertical-demo {
+  div {
+    height: 100%;
+  }
+}
 .info {
   margin-top: 60px;
 }

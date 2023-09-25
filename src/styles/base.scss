@@ -1,62 +1,61 @@
-*{
-    margin: 0;
- }
+* {
+  margin: 0;
+}
 body {
-    height: 100%;
-    width: 100%;
-    .el-menu-item:hover {
-        background-color: initial;
-      }
-    
- }
+  height: 100%;
+  width: 100%;
+  .el-menu-item:hover {
+    background-color: initial;
+  }
+}
 
 label {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 html {
-    height: 100%;
-    box-sizing: border-box;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 #app {
-    display:block;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 a:focus,
 a:active {
-    outline: none;
+  outline: none;
 }
 
 a,
 a:focus,
 a:hover {
-    cursor: pointer;
-    color: inherit;
-    text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 }
 
 div:focus {
-    outline: none;
+  outline: none;
 }
 
 .clearfix {
-    &:after {
-        visibility: hidden;
-        display: block;
-        font-size: 0;
-        content: " ";
-        clear: both;
-        height: 0;
-    }
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
 }

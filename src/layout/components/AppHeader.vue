@@ -16,11 +16,7 @@
     /></el-icon>
     <!-- 搜索 -->
     <div class="search">
-      <el-input
-        placeholder="搜索关键词"
-        v-model="text"
-        suffix-icon="el-icon-search"
-      >
+      <el-input placeholder="搜索关键词" v-model="text" suffix-icon="el-icon-search">
         <template #prefix>
           <el-icon size="16" style="vertical-align: middle">
             <Search />
@@ -50,10 +46,7 @@
     >
       <div class="left">
         <div class="avatar">
-          <img
-            src="https://img.js.design/assets/img/6284bbb5cfbf108657fa51cb.png"
-            alt=""
-          />
+          <img src="https://img.js.design/assets/img/6284bbb5cfbf108657fa51cb.png" alt="" />
         </div>
         <div class="name">
           <div>{{ user_sotre.user?.name }}</div>
@@ -89,9 +82,7 @@ const changeFn = () => {
 }
 let color = ref<String>()
 onMounted(() => {
-  color = ref<string>(
-    getComputedStyle(document.body).getPropertyValue('--open-bg').trim()
-  )
+  color = ref<string>(getComputedStyle(document.body).getPropertyValue('--open-bg').trim())
 })
 watch(
   () => store.light_flag,
